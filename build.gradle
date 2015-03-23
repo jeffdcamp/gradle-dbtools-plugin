@@ -5,7 +5,7 @@ apply plugin: 'signing'
 def groupId = "org.dbtools"
 group = groupId
 archivesBaseName = "gradle-dbtools-plugin"
-version = '3.1.1'
+version = '3.1.2'
 
 sourceCompatibility = '1.6'
 
@@ -16,7 +16,7 @@ repositories {
 
 dependencies {
     compile gradleApi()
-    compile 'org.dbtools:dbtools-gen:3.1.1'
+    compile 'org.dbtools:dbtools-gen:3.1.2'
 }
 
 task javadocJar(type: Jar) {
@@ -46,7 +46,7 @@ uploadArchives {
 //            repository (url: "file://${System.env.HOME}/.m2/repository/")
 //            pom.groupId = groupId
 //            pom.artifactId = archivesBaseName
-//            pom.version = version
+//            pom.version = version + '-SNAPSHOT'
 //            pom.packaging = 'aar'
 //            uniqueVersion = false // don't put in a timestamp on the filename (other project will not be able to depend on it)
 //        }
@@ -61,7 +61,7 @@ uploadArchives {
 
             pom.project {
                 name 'DBTools Gradle Plugin'
-                packaging 'jar'
+                packaging 'aar'
                 description 'Gradle plugin for use with dbtools'
                 url 'https://github.com/jeffdcamp/gradle-dbtools-plugin'
 
