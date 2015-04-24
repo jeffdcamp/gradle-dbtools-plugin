@@ -31,6 +31,7 @@ public class GenClassesTask extends DefaultTask {
         genConfig.setIncludeDatabaseNameInPackage(dbExt.isIncludeDatabaseNameInPackage());
         genConfig.setOttoSupport(dbExt.isOttoSupport());
         genConfig.setJavaeeSupport(dbExt.isJavaEESupport());
+        genConfig.setSqlQueryBuilderSupport(dbExt.isSqlQueryBuilderSupport());
 
         builder.setGenConfig(genConfig);
         builder.build();

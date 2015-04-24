@@ -37,6 +37,11 @@ public class DBToolsExtension extends BaseDBToolsExtension {
     private boolean jsr305Support = true;
 
     /**
+     * Use dbtools-query for generated queries
+     */
+    private boolean sqlQueryBuilderSupport = false;
+
+    /**
      * If using multiple databases, it may be better to organize domain objects by database name
      */
     private boolean includeDatabaseNameInPackage = false;
@@ -121,5 +126,13 @@ public class DBToolsExtension extends BaseDBToolsExtension {
 
     public void jsr305Support(boolean jsr305Support) {
         this.jsr305Support = jsr305Support;
+    }
+
+    public boolean isSqlQueryBuilderSupport() {
+        return sqlQueryBuilderSupport;
+    }
+
+    public void sqlQueryBuilderSupport(boolean sqlQueryBuilderSupport) {
+        this.sqlQueryBuilderSupport = sqlQueryBuilderSupport;
     }
 }
