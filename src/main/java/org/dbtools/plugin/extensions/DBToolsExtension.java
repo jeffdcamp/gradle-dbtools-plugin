@@ -27,9 +27,9 @@ public class DBToolsExtension extends BaseDBToolsExtension {
     private boolean injectionSupport = false;
 
     /**
-     * Use Otto Event Bus to subscribe to database changes
+     * Use DBTools Event Bus to subscribe to database changes
      */
-    private boolean ottoSupport = false;
+    private boolean eventBusSupport = false;
 
     /**
      * Use jsr 305 (@Nullable, @Notnull, etc)
@@ -96,12 +96,12 @@ public class DBToolsExtension extends BaseDBToolsExtension {
         this.injectionSupport = injectionSupport;
     }
 
-    public boolean isOttoSupport() {
-        return ottoSupport;
+    public boolean isEventBusSupport() {
+        return eventBusSupport;
     }
 
-    public void ottoSupport(boolean ottoSupport) {
-        this.ottoSupport = ottoSupport;
+    public void eventBusSupport(boolean eventBusSupport) {
+        this.eventBusSupport = eventBusSupport;
     }
 
     public boolean isIncludeDatabaseNameInPackage() {

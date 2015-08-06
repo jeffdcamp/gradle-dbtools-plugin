@@ -29,7 +29,7 @@ public class GenClassesTask extends DefaultTask {
         genConfig.setJsr305Support(dbExt.isJsr305Support());
         genConfig.setDateTimeSupport(dbExt.isDateTimeSupport());
         genConfig.setIncludeDatabaseNameInPackage(dbExt.isIncludeDatabaseNameInPackage());
-        genConfig.setOttoSupport(dbExt.isOttoSupport());
+        genConfig.setEventBusSupport(dbExt.isEventBusSupport());
         genConfig.setJavaeeSupport(dbExt.isJavaEESupport());
         genConfig.setSqlQueryBuilderSupport(dbExt.isSqlQueryBuilderSupport());
 
