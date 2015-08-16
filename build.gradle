@@ -16,7 +16,7 @@ repositories {
 
 dependencies {
     compile gradleApi()
-    compile 'org.dbtools:dbtools-gen:3.5.0-SNAPSHOT'
+    compile 'org.dbtools:dbtools-gen:3.5.0'
 }
 
 task javadocJar(type: Jar) {
