@@ -32,6 +32,7 @@ public class GenClassesTask extends DefaultTask {
         genConfig.setEventBusSupport(dbExt.isEventBusSupport());
         genConfig.setJavaeeSupport(dbExt.isJavaEESupport());
         genConfig.setSqlQueryBuilderSupport(dbExt.isSqlQueryBuilderSupport());
+        genConfig.setRxJavaSupport(dbExt.isRxJavaSupport());
 
         builder.setGenConfig(genConfig);
         builder.build();

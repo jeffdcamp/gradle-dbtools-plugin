@@ -32,6 +32,11 @@ public class DBToolsExtension extends BaseDBToolsExtension {
     private boolean eventBusSupport = false;
 
     /**
+     * Use RxJava
+     */
+    private boolean rxJavaSupport = false;
+
+    /**
      * Use jsr 305 (@Nullable, @Notnull, etc)
      */
     private boolean jsr305Support = true;
@@ -102,6 +107,14 @@ public class DBToolsExtension extends BaseDBToolsExtension {
 
     public void eventBusSupport(boolean eventBusSupport) {
         this.eventBusSupport = eventBusSupport;
+    }
+
+    public boolean isRxJavaSupport() {
+        return rxJavaSupport;
+    }
+
+    public void rxJavaSupport(boolean rxJavaSupport) {
+        this.rxJavaSupport = rxJavaSupport;
     }
 
     public boolean isIncludeDatabaseNameInPackage() {
