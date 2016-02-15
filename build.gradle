@@ -1,13 +1,14 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'signing'
+apply plugin: 'maven-publish'
 
 def groupId = "org.dbtools"
 group = groupId
 archivesBaseName = "gradle-dbtools-plugin"
-version = '4.0.2'
+version = '5.0.0'
 
-sourceCompatibility = '1.6'
+sourceCompatibility = '1.7'
 
 repositories {
     mavenLocal()
@@ -16,7 +17,7 @@ repositories {
 
 dependencies {
     compile gradleApi()
-    compile 'org.dbtools:dbtools-gen:4.0.2'
+    compile 'org.dbtools:dbtools-gen:5.0.0-SNAPSHOT'
 }
 
 task javadocJar(type: Jar) {
@@ -37,18 +38,63 @@ signing {
     sign configurations.archives
 }
 
+// DEPLOY to Maven Local Cache
+//  ./gradlew clean build publishToMavenLocal
+publishing {
+    publications {
+        maven(MavenPublication) {
+            // telling gradle to publish project's jar archive
+            from components.java
+        }
+//        myPublication(MavenPublication) {
+//            // telling gradle to publish project's jar archive
+//            from components.java
+//
+//            pom.withXml {
+//                asNode().children().last() + {
+//                    resolveStrategy = Closure.DELEGATE_FIRST
+//                    name 'DBTools Gradle Plugin'
+//                    description 'Gradle plugin for use with dbtools'
+//                    url 'https://github.com/jeffdcamp/gradle-dbtools-plugin'
+//                    scm {
+//                        connection 'scm:git:git://github.com/jeffdcamp/gradle-dbtools-plugin.git'
+//                        developerConnection 'scm:git:git@github.com:jeffdcamp/gradle-dbtools-plugin.git'
+//                        url 'https://github.com/jeffdcamp/gradle-dbtools-plugin'
+//                    }
+//
+//                    licenses {
+//                        license {
+//                            name 'The Apache License, Version 2.0'
+//                            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                        }
+//                    }
+//
+//                    developers {
+//                        developer {
+//                            id 'jcampbell'
+//                            name 'Jeff Campbell'
+//                            email 'jeffdcamp@gmail.com'
+//                        }
+//                    }
+//                }
+//            }
+//        }
+    }
+}
+
 // deploy to local cache (to make accessible to local projects) (./gradlew clean build uploadArchives)
 uploadArchives {
     repositories {
 
         // deploy to local
         mavenDeployer {
-            repository (url: "file://${System.env.HOME}/.m2/repository/")
+            repository(url: "file://${System.env.HOME}/.m2/repository/")
             pom.groupId = groupId
             pom.artifactId = archivesBaseName
             pom.version = version
-            pom.packaging = 'aar'
-            uniqueVersion = false // don't put in a timestamp on the filename (other project will not be able to depend on it)
+            pom.packaging = 'jar'
+            uniqueVersion = false
+            // don't put in a timestamp on the filename (other project will not be able to depend on it)
         }
 
         // deploy to Central
@@ -61,7 +107,7 @@ uploadArchives {
 //
 //            pom.project {
 //                name 'DBTools Gradle Plugin'
-//                packaging 'aar'
+//                packaging 'jar'
 //                description 'Gradle plugin for use with dbtools'
 //                url 'https://github.com/jeffdcamp/gradle-dbtools-plugin'
 //

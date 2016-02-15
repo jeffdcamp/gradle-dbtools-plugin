@@ -17,9 +17,9 @@ public class DBToolsExtension extends BaseDBToolsExtension {
     private boolean javaEESupport = false;
 
     /**
-     * Use JSR 310 DateTime (using Joda)
+     * Type of date to use in the database: JAVA-DATE, JODA, JSR-310 (not yet supported)
      */
-    private boolean dateTimeSupport = false;
+    private String dateType = "JAVA-DATE";
 
     /**
      * Use CDI Dependency Injection
@@ -85,12 +85,12 @@ public class DBToolsExtension extends BaseDBToolsExtension {
         this.javaEESupport = javaEESupport;
     }
 
-    public boolean isDateTimeSupport() {
-        return dateTimeSupport;
+    public String dateType() {
+        return dateType;
     }
 
-    public void dateTimeSupport(boolean dateTimeSupport) {
-        this.dateTimeSupport = dateTimeSupport;
+    public void dateType(String dateType) {
+        this.dateType = dateType;
     }
 
     public boolean isInjectionSupport() {
