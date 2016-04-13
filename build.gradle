@@ -6,7 +6,7 @@ apply plugin: 'maven-publish'
 def groupId = "org.dbtools"
 group = groupId
 archivesBaseName = "gradle-dbtools-plugin"
-version = '5.0.3'
+version = '6.0.0'
 
 sourceCompatibility = '1.7'
 
@@ -17,7 +17,7 @@ repositories {
 
 dependencies {
     compile gradleApi()
-    compile 'org.dbtools:dbtools-gen:5.0.3'
+    compile 'org.dbtools:dbtools-gen:6.0.0'
 }
 
 task javadocJar(type: Jar) {

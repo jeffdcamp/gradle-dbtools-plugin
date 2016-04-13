@@ -21,4 +21,6 @@ nb-configuration.xml
 target/
 
 # Gradle
+.gradle/
 build/
+local.properties

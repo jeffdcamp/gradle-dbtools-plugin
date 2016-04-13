@@ -19,7 +19,6 @@ public class GenClassesTask extends DefaultTask {
         genConfig.setInjectionSupport(dbExt.isInjectionSupport());
         genConfig.setJsr305Support(dbExt.isJsr305Support());
         genConfig.setIncludeDatabaseNameInPackage(dbExt.isIncludeDatabaseNameInPackage());
-        genConfig.setEventBusSupport(dbExt.isEventBusSupport());
         genConfig.setJavaeeSupport(dbExt.isJavaEESupport());
         genConfig.setSqlQueryBuilderSupport(dbExt.isSqlQueryBuilderSupport());
         genConfig.setRxJavaSupport(dbExt.isRxJavaSupport());

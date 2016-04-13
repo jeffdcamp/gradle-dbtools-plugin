@@ -101,14 +101,6 @@ public class DBToolsExtension extends BaseDBToolsExtension {
         this.injectionSupport = injectionSupport;
     }
 
-    public boolean isEventBusSupport() {
-        return eventBusSupport;
-    }
-
-    public void eventBusSupport(boolean eventBusSupport) {
-        this.eventBusSupport = eventBusSupport;
-    }
-
     public boolean isRxJavaSupport() {
         return rxJavaSupport;
     }
