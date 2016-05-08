@@ -47,9 +47,9 @@ public class DBToolsExtension extends BaseDBToolsExtension {
     private boolean sqlQueryBuilderSupport = false;
 
     /**
-     * If using multiple databases, it may be better to organize domain objects by database name
+     * If using multiple databases, organize domain objects by database name
      */
-    private boolean includeDatabaseNameInPackage = false;
+    private boolean includeDatabaseNameInPackage = true;
 
     /**
      * Name of the base package that should be used for generated files.  This
