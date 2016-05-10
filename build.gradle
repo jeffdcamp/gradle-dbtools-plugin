@@ -10,7 +10,7 @@ repositories {
 
 dependencies {
     compile gradleApi()
-    compile 'org.dbtools:dbtools-gen:7.0.0'
+    compile 'org.dbtools:dbtools-gen:7.0.1'
 }
 
 // ./gradlew clean check installLocal
